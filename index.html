@@ -1,22 +1,41 @@
 <!DOCTYPE html>
 
 <title>Hackers TODO</title>
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/js/bootstrap.min.js"></script>
+<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/css/bootstrap-combined.min.css" rel="stylesheet">
+
+<style>
+  h1 {
+    margin: 0;
+    padding: 10px;
+    font-weight: 200;
+  }
+  header {
+    color: white;
+    background: black;
+  }
+  article {
+    float: left;
+    padding: 10px;
+  }
+</style>
 
 <script type="text/javascript">
   function addTask() {
     if (window.event.keyCode == 13) {
       var taskEl = document.getElementById('add-task');
       var li = document.createElement('li');
+      var a = document.createElement('a');
       var text = document.createTextNode(taskEl.value);
-      li.appendChild(text);
+      li.appendChild(a);
+      a.appendChild(text);
       document.getElementById('todo-list').appendChild(li);
       taskEl.value = ''
     }
   }
   function removeTask() {
-    var li = window.event.target;
-    var task = li.innerHTML;
-    li.innerHTML = '<strike>' + task + '</strike>';
+    var a = window.event.target;
+    a.parentNode.parentNode.removeChild(a.parentNode);
   }
 </script>
 
@@ -26,5 +45,5 @@
 
 <article>
   <input id="add-task" type="text" placeholder="Add task" onkeypress="addTask()" />
-  <ul id="todo-list" onclick="removeTask()"></ul>
+  <ul id="todo-list" class="nav nav-tabs nav-stacked" data-toggle="tabs" onclick="removeTask()"></ul>
 </article>
