@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<title>Hackers TODO</title>
+
+<script type="text/javascript">
+  function addTask() {
+    if (window.event.keyCode == 13) {
+      var taskEl = document.getElementById('add-task');
+      var li = document.createElement('li');
+      var text = document.createTextNode(taskEl.value);
+      li.appendChild(text);
+      document.getElementById('todo-list').appendChild(li);
+      taskEl.value = ''
+    }
+  }
+  function removeTask() {
+    var li = window.event.target;
+    var task = li.innerHTML;
+    li.innerHTML = '<strike>' + task + '</strike>';
+  }
+</script>
+
+<header>
+  <h1>Hackers TODO</h1>
+</header>
+
+<article>
+  <input id="add-task" type="text" placeholder="Add task" onkeypress="addTask()" />
+  <ul id="todo-list" onclick="removeTask()"></ul>
+</article>
