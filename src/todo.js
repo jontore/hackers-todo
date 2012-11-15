@@ -9,7 +9,8 @@ $(function() {
   }
 
   function removeTask(e) {
-    $(e.target).parents('li').remove();
+    var el = $(e.target).parents('li').remove();
+    $('#done-list').append(el);
   }
 
   $('#add-task').keypress(addTask).focus();
