@@ -15,8 +15,7 @@
   }
   function removeTask() {
     var li = window.event.target;
-    var task = li.innerHTML;
-    li.innerHTML = '<strike>' + task + '</strike>';
+    li.parentNode.removeChild(li);
   }
 </script>
 
