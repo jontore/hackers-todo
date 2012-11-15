@@ -13,3 +13,7 @@ article {
   float: left;
   padding: 10px;
 }
+
+#add-task {
+  margin-bottom: 10px;
+}
