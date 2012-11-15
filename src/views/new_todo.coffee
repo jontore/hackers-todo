@@ -1,4 +1,8 @@
-define ['jquery', 'backbone'], ($, Backbone) ->
+define [
+  'jquery'
+  'backbone'
+  'text!./new_todo.html'], ($, Backbone, html) ->
+
   class NewTodo extends Backbone.View
 
     el: '#add-task'
@@ -10,7 +14,7 @@ define ['jquery', 'backbone'], ($, Backbone) ->
       @tasks = tasks
 
     render: ->
-      @input = $('<input id="add-task" type="text" placeholder="Add task" />')
+      @input = $(html)
       @$el.append this.input
       @input.focus()
 

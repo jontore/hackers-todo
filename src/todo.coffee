@@ -3,7 +3,8 @@ define [
   'cs!./views/todo_list'
   'cs!./views/done_list'
   'cs!./views/new_todo'
-], (TaskList, TodoList, DoneList, NewTodo) ->
+  'cs!./config/rivets_config'
+], (TaskList, TodoList, DoneList, NewTodo, nop) ->
   class Todo
     constructor: ->
       tasks = new TaskList

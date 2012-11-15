@@ -1,4 +1,10 @@
-define ['jquery', 'backbone', 'cs!./todo_item'], ($, Backbone, TodoItem) ->
+define [
+  'jquery'
+  'backbone'
+  'cs!./todo_item'
+  'text!./done_list.html'
+], ($, Backbone, TodoItem, html) ->
+
   class DoneList extends Backbone.View
 
     el: '#done-list'
@@ -7,7 +13,7 @@ define ['jquery', 'backbone', 'cs!./todo_item'], ($, Backbone, TodoItem) ->
       tasks.on 'change', @onTaskCompleted
 
     render: ->
-      @ul = $('<ul class="nav nav-tabs nav-stacked" data-toggle="tabs" style="opacity: 0.3"></ul>');
+      @ul = $(html);
       @$el.append this.ul
 
     onTaskCompleted: (task) =>

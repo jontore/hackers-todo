@@ -1,14 +1,19 @@
-define ['jquery', 'backbone', 'cs!./todo_item'], ($, Backbone, TodoItem) ->
+define [
+  'jquery'
+  'backbone'
+  'cs!./todo_item'
+  'text!./todo_list.html'
+], ($, Backbone, TodoItem, html) ->
+
   class TodoList extends Backbone.View
 
     el: '#todo-list'
 
     initialize: (tasks) ->
-      @tasks = tasks
       tasks.on 'add', @onTaskAdded
 
     render: ->
-      @ul = $('<ul class="nav nav-tabs nav-stacked" data-toggle="tabs"></ul>')
+      @ul = $(html)
       @$el.append this.ul
 
     onTaskAdded: (task) =>

@@ -1,4 +1,10 @@
-define ['jquery', 'backbone'], ($, Backbone) ->
+define [
+  'jquery'
+  'backbone'
+  'rivets'
+  'text!./todo_item.html'
+], ($, Backbone, rivets, html) ->
+
   class TodoList extends Backbone.View
 
     tagName: 'li'
@@ -11,8 +17,8 @@ define ['jquery', 'backbone'], ($, Backbone) ->
       task.on 'change', @onTaskCompleted
 
     render: ->
-      taskEl = $("<a data-task-id=#{@task.cid}>#{@task.get('desc')}</a>")
-      @$el.append taskEl
+      @$el.append html
+      rivets.bind @$el, task: @task
 
     onTaskCompleted: =>
       @$el.slideUp 'slow', =>
