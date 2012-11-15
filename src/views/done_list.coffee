@@ -1,4 +1,4 @@
-define ['jquery', 'backbone'], ($, Backbone) ->
+define ['jquery', 'backbone', 'cs!./todo_item'], ($, Backbone, TodoItem) ->
   class DoneList extends Backbone.View
 
     el: '#done-list'
@@ -11,4 +11,6 @@ define ['jquery', 'backbone'], ($, Backbone) ->
       @$el.append this.ul
 
     onTaskCompleted: (task) =>
-      @ul.append("<li><a data-task-id=#{task.cid}>#{task.get('desc')}</a></li>");
+      todoItem = new TodoItem task
+      @ul.append todoItem.$el
+      todoItem.render()
