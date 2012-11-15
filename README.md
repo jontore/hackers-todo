@@ -7,7 +7,7 @@ Awsome todo app in HTML5
 * v2: added bootstrap
 * v3: removed globals and namespaced js
 * v4: backbone model and views
-* v5: rivets databinding
+* v5: coffeescript
 * v6: requirejs and amd
-* v7: coffeescript
+* v7: rivets databinding
 * v8: busterjs
