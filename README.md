@@ -1,13 +1,13 @@
 hackers-todo
 ============
 
-Awsome todo app in HTML5
+Awesome HTML5 Todo App
 
-* v1: pure js and dom
-* v2: added bootstrap
-* v3: removed globals and namespaced js
-* v4: backbone model and views
-* v5: coffeescript
-* v6: requirejs and amd
-* v7: rivets databinding
-* v8: busterjs
+* v1: [pure js and dom](/jontore/hackers-todo/tree/v1)
+* v2: [bootstrap](/jontore/hackers-todo/tree/v2)
+* v3: [jquery and basic structuring](/jontore/hackers-todo/tree/v3)
+* v4: [backbone model and views](/jontore/hackers-todo/tree/v4)
+* v5: [coffeescript](/jontore/hackers-todo/tree/v5)
+* v6: [requirejs / amd](/jontore/hackers-todo/tree/v6)
+* v7: [templating and databinding](/jontore/hackers-todo/tree/v7)
+* v8: [testing](/jontore/hackers-todo/tree/v8)
