@@ -10,7 +10,7 @@ define [
     tagName: 'li'
 
     events:
-      'click': 'onClick'
+      'click i': 'onCheckClick'
 
     initialize: (task) ->
       @task = task
@@ -24,5 +24,5 @@ define [
       @$el.slideUp 'slow', =>
         @$el.remove()
 
-    onClick: (e) ->
+    onCheckClick: (e) ->
       @task.set('done', true)

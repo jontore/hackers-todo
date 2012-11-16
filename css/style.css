@@ -17,3 +17,14 @@ article {
 #add-task {
   margin-bottom: 10px;
 }
+
+i {
+  cursor: pointer;
+  opacity: 0.1;
+  padding-right: 8px;
+}
+
+i:hover {
+  opacity: 1;
+  padding-right: 8px;
+}
