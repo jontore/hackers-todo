@@ -11,7 +11,7 @@ define [
 
     events:
       'click i': 'onCheckClick'
-
+ 
     initialize: (task) ->
       @task = task
       task.on 'change', @onTaskCompleted
@@ -20,9 +20,10 @@ define [
       @$el.append html
       rivets.bind @$el, task: @task
 
-    onTaskCompleted: =>
+    onTaskCompleted: (model, change, cb = ->) =>
       @$el.slideUp 'slow', =>
-        @$el.remove()
+        @remove()
+        cb()
 
     onCheckClick: (e) ->
       @task.set('done', true)
