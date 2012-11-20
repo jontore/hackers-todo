@@ -20,10 +20,9 @@ define [
       @$el.append html
       rivets.bind @$el, task: @task
 
-    onTaskCompleted: (model, change, cb = ->) =>
+    onTaskCompleted: =>
       @$el.slideUp 'slow', =>
         @remove()
-        cb()
 
     onCheckClick: (e) ->
       @task.set('done', true)
