@@ -1,6 +1,7 @@
 define [
   'cs!src/models/task'
 ], (Task) ->
+
   buster.testCase 'task model'
     'setUp': ->
       @model = new Task

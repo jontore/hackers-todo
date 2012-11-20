@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "dependencies": {
     "buster-amd": ">= 0.0.1",
-    "buster": "~0.6.2"
+    "buster": "~0.6.2",
+    "buster-coffee": "~0.1.3"
   }
 }
