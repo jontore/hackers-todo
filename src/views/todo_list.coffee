@@ -10,11 +10,16 @@ define [
     el: '#todo-list'
 
     initialize: (tasks) ->
-      tasks.on 'add', @onTaskAdded
+      @tasks = tasks
+      @tasks.on 'add', @onTaskAdded
 
     render: ->
       @ul = $(html)
       @$el.append this.ul
+
+      @tasks.fetch
+        success: =>
+          @tasks.each @onTaskAdded
 
     onTaskAdded: (task) =>
       todoItem = new TodoItem task

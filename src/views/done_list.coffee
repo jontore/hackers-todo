@@ -13,7 +13,7 @@ define [
       tasks.on 'change', @onTaskCompleted
 
     render: ->
-      @ul = $(html);
+      @ul = $(html)
       @$el.append this.ul
 
     onTaskCompleted: (task) =>

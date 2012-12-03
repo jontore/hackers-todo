@@ -3,7 +3,7 @@ define ['rivets'], (rivets) ->
   rivets.configure
     adapter:
       subscribe: (obj, keypath, callback) ->
-        callback.wrapped = (m, v) -> 
+        callback.wrapped = (m, v) ->
           callback(v)
         obj.on 'change:' + keypath, callback.wrapped if obj.on
 

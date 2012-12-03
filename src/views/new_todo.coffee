@@ -20,6 +20,6 @@ define [
 
     onKeyPress: (e) ->
       if e.keyCode is 13 and @input.val()
-        @tasks.add
+        @tasks.create
           desc: @input.val()
         @input.val('')
