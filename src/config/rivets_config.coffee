@@ -3,8 +3,7 @@ define ['rivets'], (rivets) ->
   rivets.configure
     adapter:
       subscribe: (obj, keypath, callback) ->
-        callback.wrapped = (m, v) -> 
-          callback(v)
+        callback.wrapped = (m, v) -> callback(v)
         obj.on 'change:' + keypath, callback.wrapped if obj.on
 
       unsubscribe: (obj, keypath, callback) ->
@@ -16,7 +15,7 @@ define ['rivets'], (rivets) ->
       publish: (obj, key, value) ->
         o = {}
         o[key] = value
-        obj.set o, silent: true
+        obj.set o
         obj.trigger "change:#{key}", obj, value
 
   rivets

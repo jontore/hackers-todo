@@ -3,3 +3,6 @@ define ['backbone'], (Backbone) ->
     defaults:
       desc: ''
       done: false
+
+    initialize: ->
+      @on 'change', -> console.log 'change'

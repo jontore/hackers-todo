@@ -11,12 +11,14 @@ define [
 
     initialize: (tasks) ->
       tasks.on 'add', @onTaskAdded
+      tasks.on 'change', @onTaskAdded
 
     render: ->
       @ul = $(html)
       @$el.append this.ul
 
     onTaskAdded: (task) =>
-      todoItem = new TodoItem task
-      @ul.append todoItem.$el
-      todoItem.render()
+      unless task.get 'done'
+        todoItem = new TodoItem task
+        @ul.append todoItem.$el
+        todoItem.render()

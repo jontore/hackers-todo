@@ -17,6 +17,7 @@ define [
       @$el.append this.ul
 
     onTaskCompleted: (task) =>
-      todoItem = new TodoItem task
-      @ul.append todoItem.$el
-      todoItem.render()
+      if task.get 'done'
+        todoItem = new TodoItem task
+        @ul.append todoItem.$el
+        todoItem.render()
